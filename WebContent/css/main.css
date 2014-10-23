@@ -27,24 +27,27 @@ html, body {
 
 h1 {
 	display: inline-block;
+	margin: 0 0 0 1.8rem;
 	font-weight: normal;
 	font-size: 1.8rem;
-	margin-left: 1rem;
-	margin-bottom: 0;
-	margin-top: 0;
 }
 
 ul {
+	margin: 0 0 0 2rem;
 	display: inline-block;
+	padding: 0;
 }
 
 li {
-	margin: 0 1rem 0 1rem;
 	display: inline-block;
-	padding: 1rem;
+	padding: 1.5rem 2rem 1.5rem 2rem;
 	opacity: 0;
 }
 	li:hover {
+		background-color: #11906b;
+		cursor: pointer;
+	}
+	li:active {
 		background-color: #11906b;
 		cursor: pointer;
 	}

@@ -1,0 +1,32 @@
+@media screen and (max-width: 500px) {
+	h1 {
+		text-align: center;
+		margin-top: 0.4rem;
+		margin-left: 0;
+	}
+	
+	ul {
+		text-align: center;
+		margin: 0;
+	}
+	
+	li {
+		margin: 0 0.4rem 0 0.4rem;
+		display: inline-block;
+		padding: 1rem;
+		opacity: 0;
+	}
+		li:hover {
+			background-color: #11906b;
+			cursor: pointer;
+		}
+		li:active {
+			background-color: #11906b;
+			cursor: pointer;
+		}
+	
+	#navbar {
+		text-align: center;
+		margin: auto;
+	}
+}

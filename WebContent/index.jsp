@@ -18,14 +18,16 @@
         <!-- Javascript and jQuery library -->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+        
+        <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
     </head>
     <body>
         <div id="navbar">
         	<h1>Scrumworks Reporter</h1>
         	<ul>
-        		<li>Report Type 01</li>
-        		<li>Report Type 02</li>
-        		<li>Report Type 03</li>
+        		<li>Report1</li>
+        		<li>Report2</li>
+        		<li>Report3</li>
         	</ul>
         </div>
     </body>
