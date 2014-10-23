@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    setTimeout(function() {
-        $("#logo").animate({margin: "0px", fontSize : "1rem"}, 500);
-    }, 1000);
+	$("li").each(function(index) {
+		$(this).animate({opacity : "1"}, ((index + 1) * 500));
+	});
 });

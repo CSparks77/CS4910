@@ -1,19 +1,58 @@
 /**
  * This CSS file is responsible for the overall layout
- * of the website as it is displayed on the desktop.
+ * of the web site as it is displayed on the desktop.
  * For the mobile CSS, please see the mobile.css file.
  */
 
+/* CSS animations */
+@-webkit-keyframes slideDownNav {
+	0% {margin-top: -10rem;}
+	100% {margin-top: 0;}
+}
+@keyframes slideDownNav {
+	0% {margin-top: -10rem;}
+	100% {margin-top: 0;}
+}
+
 html, body {
     font-family: Avenir, 'Segoe UI', Ubuntu, sans;
-    background-color: #0c6f52;
+    background-color: #f0ebeb;
+    font-size: 1rem;
     color: white;
+    margin: 0;
 
     /* Beautiful fonts for Webkit */
     -webkit-font-smoothing: antialiased;
 }
 
-#logo {
-    font-size: 2rem;
-    margin-top: 12rem;
+h1 {
+	display: inline-block;
+	font-weight: normal;
+	font-size: 1.8rem;
+	margin-left: 1rem;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+ul {
+	display: inline-block;
+}
+
+li {
+	margin: 0 1rem 0 1rem;
+	display: inline-block;
+	padding: 1rem;
+	opacity: 0;
+}
+	li:hover {
+		background-color: #11906b;
+		cursor: pointer;
+	}
+
+/* The navigation bar at the top of the page. */
+#navbar {
+	-webkit-animation: slideDownNav 0.5s;
+    animation: slideDownNav 0.5s;
+    background-color: #0c6f52;
+	width: 100%;
 }

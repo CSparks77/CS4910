@@ -20,6 +20,13 @@
         <script type="text/javascript" src="js/main.js"></script>
     </head>
     <body>
-        <div id="logo">Commerce Bank</div>
+        <div id="navbar">
+        	<h1>Scrumworks Reporter</h1>
+        	<ul>
+        		<li>Report Type 01</li>
+        		<li>Report Type 02</li>
+        		<li>Report Type 03</li>
+        	</ul>
+        </div>
     </body>
 </html>
