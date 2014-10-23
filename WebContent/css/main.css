@@ -1,0 +1,19 @@
+/**
+ * This CSS file is responsible for the overall layout
+ * of the website as it is displayed on the desktop.
+ * For the mobile CSS, please see the mobile.css file.
+ */
+
+html, body {
+    font-family: Avenir, 'Segoe UI', Ubuntu, sans;
+    background-color: #0c6f52;
+    color: white;
+
+    /* Beautiful fonts for Webkit */
+    -webkit-font-smoothing: antialiased;
+}
+
+#logo {
+    font-size: 2rem;
+    margin-top: 12rem;
+}
