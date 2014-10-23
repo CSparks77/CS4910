@@ -30,5 +30,12 @@
         		<li>Report3</li>
         	</ul>
         </div>
+        <div id="document">
+        	<div id="blank">
+        		<div id="message">
+        			No reports open.
+        		</div>
+        	</div>
+        </div>
     </body>
 </html>
