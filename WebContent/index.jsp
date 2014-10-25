@@ -27,7 +27,7 @@
         	<ul>
         		<li id="kanban_workflow">Kanban Workflow</li>
         		<li id="kanban_activity">Kanban Activity</li>
-        		<li id="user_activity)">User Activity</li>
+        		<li id="user_activity">User Activity</li>
         	</ul>
         </div>
         <div id="document">

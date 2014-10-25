@@ -92,6 +92,7 @@ li {
 	#document #viewport {
 		background-color: #dcd7d7;
 		padding: 0 2rem 0 2rem;
+		display: none;
 		height: 100%;
 		margin: auto;
 		width: 50rem;

@@ -20,8 +20,15 @@ $(document).ready(function() {
 		$("#blank").delay(500).fadeIn(500);
 	});
 	
+	// Handle the navbar button clicks.
 	$("#kanban_workflow").click(function() {
 		kanbanWorkflow();
+	});
+	$("#kanban_activity").click(function() {
+		kanbanActivity();
+	});
+	$("#user_activity").click(function() {
+		userActivity();
 	});
 });
 
@@ -32,6 +39,28 @@ $(document).ready(function() {
 function kanbanWorkflow() {
 	$("#document").empty(); // Clear the div
 	$("#document").load("dynamicHTML/kanbanWorkflow.html #viewport", function() {
-		
+		$("#viewport").fadeIn(200);
+	});
+}
+
+/**
+ * This function will handle the Kanban Activity
+ * report button.
+ */
+function kanbanActivity() {
+	$("#document").empty(); // Clear the div
+	$("#document").load("dynamicHTML/kanbanActivity.html #viewport", function() {
+		$("#viewport").fadeIn(200);
+	});
+}
+
+/**
+ * This function will handle the User Activity
+ * report button.
+ */
+function userActivity() {
+	$("#document").empty(); // Clear the div
+	$("#document").load("dynamicHTML/userActivity.html #viewport", function() {
+		$("#viewport").fadeIn(200);
 	});
 }
