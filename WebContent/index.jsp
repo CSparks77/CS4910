@@ -17,7 +17,7 @@
 
         <!-- Javascript and jQuery library -->
         <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+    	<script type="text/javascript" src="js/main.js"></script>
         
         <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
     </head>
@@ -25,17 +25,14 @@
         <div id="navbar">
         	<h1>Scrumworks Reporter</h1>
         	<ul>
-        		<li>Report1</li>
-        		<li>Report2</li>
-        		<li>Report3</li>
+        		<li id="kanban_workflow">Kanban Workflow</li>
+        		<li id="kanban_activity">Kanban Activity</li>
+        		<li id="user_activity)">User Activity</li>
         	</ul>
         </div>
         <div id="document">
-        	<div id="blank">
-        		<div id="message">
-        			No reports open.
-        		</div>
-        	</div>
+        	<!-- This div is auto-filled by main.js depending
+        		 upon user interaction -->
         </div>
     </body>
 </html>
