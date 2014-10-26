@@ -24,11 +24,13 @@
     <body>
         <div id="navbar">
         	<h1>Scrumworks Reporter</h1>
-        	<ul>
-        		<li id="kanban_workflow">Kanban Workflow</li>
-        		<li id="kanban_activity">Kanban Activity</li>
-        		<li id="user_activity">User Activity</li>
-        	</ul>
+        	<form>
+	        	<ul>
+	        		<li id="kanban_workflow">Kanban Workflow</li>
+	        		<li id="kanban_activity">Kanban Activity</li>
+	        		<li id="user_activity">User Activity</li>
+	        	</ul>
+        	</form>
         </div>
         <div id="document">
         	<!-- This div is auto-filled by main.js depending

@@ -41,6 +41,11 @@ h1 {
 	font-size: 1.8rem;
 }
 
+form {
+	display: inline-block;
+	margin: 0;
+}
+
 ul {
 	margin: 0 0 0 2rem;
 	display: inline-block;

@@ -44,6 +44,13 @@ function kanbanWorkflow() {
 		$("#viewport").fadeIn(200);
 		$("#viewport").css({ "height" : $(window).height() - $("#navbar").height() });
 	});
+	
+	// Use AJAX to call the Java servlet
+	$.ajax({
+        type: "POST",
+        url: "RequestServlet",
+        data :"kanban_workflow"
+	});
 }
 
 /**
@@ -56,6 +63,13 @@ function kanbanActivity() {
 		$("#viewport").fadeIn(200);
 		$("#viewport").css({ "height" : $(window).height() - $("#navbar").height() });
 	});
+	
+	// Use AJAX to call the Java servlet
+	$.ajax({
+        type: "POST",
+        url: "RequestServlet",
+        data :"kanban_activity"
+	});
 }
 
 /**
@@ -67,5 +81,12 @@ function userActivity() {
 	$("#document").load("dynamicHTML/userActivity.html #viewport", function() {
 		$("#viewport").fadeIn(200);
 		$("#viewport").css({ "height" : $(window).height() - $("#navbar").height() });
+	});
+	
+	// Use AJAX to call the Java servlet
+	$.ajax({
+        type: "POST",
+        url: "RequestServlet",
+        data :"user_activity"
 	});
 }
