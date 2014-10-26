@@ -8,7 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class RequestServlet
+ * This class is responsible for accepting all
+ * user requests and delegating the work out to
+ * other classes for each specific task.
+ * 
+ * @author James Manes (JAM38220)
  */
 @WebServlet("/RequestServlet")
 public class RequestServlet extends HttpServlet {

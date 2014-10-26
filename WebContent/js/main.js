@@ -12,11 +12,13 @@ $(document).ready(function() {
 	// Load the initial "No reports open." message.
 	$("#document").load("dynamicHTML/noContent.html #blank", function() {
 		// Display the "No reports open." message in the middle of the page.
-		$("#blank").css("position","absolute");
-		$("#blank").css("top", Math.max(0, (($(window).height() - $("#blank").outerHeight()) / 2) + 
-	                                                $(window).scrollTop()) + "px");
-		$("#blank").css("left", Math.max(0, (($(window).width() - $("#blank").outerWidth()) / 2) + 
-	                                                $(window).scrollLeft()) + "px");
+		$('#blank').css({
+	        'position' : 'absolute',
+	        'left' : '50%',
+	        'top' : '50%',
+	        'margin-left' : -$("#blank").width()/2,
+	        'margin-top' : -$("#blank").height()/2
+	    });
 		$("#blank").delay(500).fadeIn(500);
 	});
 	
@@ -40,6 +42,7 @@ function kanbanWorkflow() {
 	$("#document").empty(); // Clear the div
 	$("#document").load("dynamicHTML/kanbanWorkflow.html #viewport", function() {
 		$("#viewport").fadeIn(200);
+		$("#viewport").css({ "height" : $(window).height() - $("#navbar").height() });
 	});
 }
 
@@ -51,6 +54,7 @@ function kanbanActivity() {
 	$("#document").empty(); // Clear the div
 	$("#document").load("dynamicHTML/kanbanActivity.html #viewport", function() {
 		$("#viewport").fadeIn(200);
+		$("#viewport").css({ "height" : $(window).height() - $("#navbar").height() });
 	});
 }
 
@@ -62,5 +66,6 @@ function userActivity() {
 	$("#document").empty(); // Clear the div
 	$("#document").load("dynamicHTML/userActivity.html #viewport", function() {
 		$("#viewport").fadeIn(200);
+		$("#viewport").css({ "height" : $(window).height() - $("#navbar").height() });
 	});
 }
