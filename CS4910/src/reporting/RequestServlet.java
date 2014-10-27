@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import delegates.KanbanActivityDelegate;
-import delegates.KanbanWorkflowDelegate;
-import delegates.UserActivityDelegate;
+import delegation.KanbanActivityDelegate;
+import delegation.KanbanWorkflowDelegate;
+import delegation.UserActivityDelegate;
 
 /**
  * This class is responsible for accepting all
@@ -27,7 +27,8 @@ public class RequestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     * Call super to set up the HttpServlet class.
+     * Call super to set up the HttpServlet class and
+     * instantiate kanban/user objects.
      * 
      * @see HttpServlet#HttpServlet()
      */

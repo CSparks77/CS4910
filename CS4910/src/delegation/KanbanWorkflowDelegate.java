@@ -1,4 +1,4 @@
-package delegates;
+package delegation;
 
 /**
  * This class will be responsible for getting
