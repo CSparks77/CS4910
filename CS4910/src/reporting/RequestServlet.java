@@ -1,11 +1,16 @@
 package reporting;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import delegates.KanbanActivityDelegate;
+import delegates.KanbanWorkflowDelegate;
+import delegates.UserActivityDelegate;
 
 /**
  * This class is responsible for accepting all
@@ -16,24 +21,27 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/RequestServlet")
 public class RequestServlet extends HttpServlet {
+	private KanbanActivityDelegate kanbanActivityDelegate;
+	private KanbanWorkflowDelegate kanbanWorkflowDelegate;
+	private UserActivityDelegate userActivityDelegate;
 	private static final long serialVersionUID = 1L;
        
     /**
+     * Call super to set up the HttpServlet class.
+     * 
      * @see HttpServlet#HttpServlet()
      */
     public RequestServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        this.kanbanActivityDelegate = new KanbanActivityDelegate();
+        this.kanbanWorkflowDelegate = new KanbanWorkflowDelegate();
+        this.userActivityDelegate = new UserActivityDelegate();
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
-
-	/**
+	 * This method will handle all requests from the frontend and delegate
+	 * the work out to methods within this class.
+	 * 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
