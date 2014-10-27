@@ -1,4 +1,4 @@
-package reporting;
+package connection;
 
 import java.io.IOException;
 
