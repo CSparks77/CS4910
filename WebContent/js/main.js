@@ -50,7 +50,10 @@ function kanbanWorkflow() {
 	$.ajax({
         type: "POST",
         url: "RequestServlet",
-        data :"kanban_workflow"
+        data :"kanban_workflow",
+        success: function(data) {
+        	// TODO
+        }
 	});
 }
 
@@ -69,7 +72,10 @@ function kanbanActivity() {
 	$.ajax({
         type: "POST",
         url: "RequestServlet",
-        data: "kanban_activity"
+        data: "kanban_activity",
+        success: function(data) {
+        	// TODO
+        }
 	});
 }
 
@@ -88,7 +94,10 @@ function userActivity() {
 	$.ajax({
         type: "POST",
         url: "RequestServlet",
-        data: "user_activity"
+        data: "user_activity",
+        success: function(data) {
+        	// TODO
+        }
 	});
 }
 

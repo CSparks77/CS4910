@@ -38,7 +38,7 @@ public class RequestServlet extends HttpServlet {
     }
 
 	/**
-	 * This method will handle all requests from the frontend and delegate
+	 * This method will handle all requests from the front end and delegate
 	 * the work out to methods within this class.
 	 * 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -54,10 +54,13 @@ public class RequestServlet extends HttpServlet {
 		// Determine what navbar item was selected by the user.
 		if(request.getParameter("kanban_workflow") != null) {
 			fetchKanbanWorkflow();
+			response.getWriter().write("Hello, world!"); // TODO write back the PDF.
 		} else if(request.getParameter("kanban_activity") != null) {
 			fetchKanbanActivity();
+			response.getWriter().write("Hello, world!"); // TODO write back the PDF.
 		} else if(request.getParameter("user_activity") != null) {
 			fetchUserActivity();
+			response.getWriter().write("Hello, world!"); // TODO write back the PDF.
 		}
 	}
 

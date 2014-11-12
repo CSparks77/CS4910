@@ -61,7 +61,7 @@ public class ScrumWorksConnection {
 	}
 	
 	
-	/*
+	/* TODO Taken from the example code.... Needs re-wrote basically. Will do soon -JM
 	private WfmProduct getWfmProduct() {
 		ArrayList<ReleaseWSO> releases = new ArrayList<ReleaseWSO>(
 			Arrays.asList(this.endpoint.getReleases(this.product))
