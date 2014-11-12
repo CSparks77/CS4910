@@ -3,6 +3,9 @@ package connection;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 
 import javax.xml.rpc.ServiceException;
 
@@ -29,6 +32,8 @@ public class ScrumWorksConnection {
 	private static final String PASSWORD = "password";
 	private ScrumWorksServiceLocator locator;
 	private ScrumWorksEndpoint endpoint;
+	private ProductWSO portalProduct;
+	private ProductWSO product;
 	private URL url;
 	
 	public ScrumWorksConnection() {
@@ -38,10 +43,55 @@ public class ScrumWorksConnection {
 			this.endpoint = locator.getScrumWorksEndpointPort(url);
 			((ScrumWorksEndpointBindingStub) endpoint).setUsername(USERNAME);
 			((ScrumWorksEndpointBindingStub) endpoint).setPassword(PASSWORD);
+			
+			//final WfmProduct wfmProduct = getWfmProduct();
 		} catch(MalformedURLException e) {
 			e.printStackTrace();
 		} catch(ServiceException e1) {
 			e1.printStackTrace();
 		}
 	}
+	
+	public ProductWSO getProductWSO() {
+		return this.product;
+	}
+	
+	public ProductWSO getPortalProductWSO() {
+		return this.portalProduct;
+	}
+	
+	
+	/*
+	private WfmProduct getWfmProduct() {
+		ArrayList<ReleaseWSO> releases = new ArrayList<ReleaseWSO>(
+			Arrays.asList(this.endpoint.getReleases(this.product))
+		);
+		ArrayList<WfmRelease> wfmReleases = new ArrayList<WfmRelease>();
+		Iterator<ReleaseWSO> iReleases = releases.iterator();
+		
+		while (iReleases.hasNext()) {
+			WfmRelease wfmRelease = new WfmRelease(iReleases.next());
+			wfmReleases.add(wfmRelease);
+		}
+		
+		WfmProduct wfmProduct = new WfmProduct(productWSO, wfmReleases);
+		ArrayList<BacklogItemWSO> backlogItems = new ArrayList<BacklogItemWSO>(
+			Arrays.asList(this.endpoint.getActiveBacklogItems(this.product))
+		);
+		
+		Iterator<BacklogItemWSO> iBacklogItems = backlogItems.iterator();
+		while (iBacklogItems.hasNext()) {
+			BacklogItemWSO backlogItem = iBacklogItems.next();
+			
+			// Only include those backlog items that have not been completed
+			if (backlogItem.getCompletedDate() == null) {
+				WfmRelease release = wfmProduct.getRelease(backlogItem
+						.getReleaseId());
+				release.addBacklogItem(backlogItem);
+			}
+		}
+		
+		wfmProduct.setSprints(getSprints(wfmProduct));
+		return wfmProduct;
+	} */
 }

@@ -63,8 +63,8 @@ public class RequestServlet extends HttpServlet {
 
 	/**
 	 * This method is invoked when the user
-	 * selects the kanban workflow item from
-	 * the navbar on the frontend.
+	 * selects the kanban work flow item from
+	 * the nav bar on the front end.
 	 */
 	private void fetchKanbanWorkflow() {
 		
@@ -73,7 +73,7 @@ public class RequestServlet extends HttpServlet {
 	/**
 	 * This method is invoked when the user
 	 * selects the kanban activity item from
-	 * the navbar on the frontend.
+	 * the nav bar on the front end.
 	 */
 	private void fetchKanbanActivity() {
 		
@@ -88,10 +88,17 @@ public class RequestServlet extends HttpServlet {
 		
 	}
 	
+	/**
+	 * This method is invoked when the user first
+	 * loads the web page. From here this method will
+	 * instantiate a ScrumWorksConnection object which
+	 * will set a connection to the specified scrumworks
+	 * installation.
+	 */
 	private void initializeWebApp() {
-        this.kanbanActivityDelegate = new KanbanActivityDelegate();
-        this.kanbanWorkflowDelegate = new KanbanWorkflowDelegate();
-        this.userActivityDelegate = new UserActivityDelegate();
         this.scrumWorksConnection = new ScrumWorksConnection();
+        this.kanbanActivityDelegate = new KanbanActivityDelegate(scrumWorksConnection);
+        this.kanbanWorkflowDelegate = new KanbanWorkflowDelegate(scrumWorksConnection);
+        this.userActivityDelegate = new UserActivityDelegate(scrumWorksConnection);
 	}
 }

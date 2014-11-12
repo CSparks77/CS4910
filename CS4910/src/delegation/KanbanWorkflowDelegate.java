@@ -1,5 +1,7 @@
 package delegation;
 
+import connection.ScrumWorksConnection;
+
 /**
  * This class will be responsible for getting
  * and returning all data associated with
@@ -11,5 +13,9 @@ package delegation;
  * @author James Manes (JAM38220)
  */
 public class KanbanWorkflowDelegate {
-
+	private ScrumWorksConnection connection;
+	
+	public KanbanWorkflowDelegate(ScrumWorksConnection connection) {
+		this.connection = connection;
+	}
 }
