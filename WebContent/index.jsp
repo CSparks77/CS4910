@@ -9,7 +9,7 @@
     pageEncoding="UTF-8"%>
 <html>
     <head>
-        <title>Scrumworks Reporter</title>
+        <title>Commerce Bank - Scrumworks Reporter</title>
 
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="css/main.css"/>

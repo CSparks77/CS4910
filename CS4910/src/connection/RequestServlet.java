@@ -24,6 +24,7 @@ public class RequestServlet extends HttpServlet {
 	private KanbanActivityDelegate kanbanActivityDelegate;
 	private KanbanWorkflowDelegate kanbanWorkflowDelegate;
 	private UserActivityDelegate userActivityDelegate;
+	private ScrumWorksConnection scrumWorksConnection;
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -34,9 +35,6 @@ public class RequestServlet extends HttpServlet {
      */
     public RequestServlet() {
         super();
-        this.kanbanActivityDelegate = new KanbanActivityDelegate();
-        this.kanbanWorkflowDelegate = new KanbanWorkflowDelegate();
-        this.userActivityDelegate = new UserActivityDelegate();
     }
 
 	/**
@@ -47,6 +45,11 @@ public class RequestServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
+		
+		// Initial call on page load
+		if(request.getParameter("initialize") != null) {
+			initializeWebApp();
+		}
 		
 		// Determine what navbar item was selected by the user.
 		if(request.getParameter("kanban_workflow") != null) {
@@ -83,5 +86,12 @@ public class RequestServlet extends HttpServlet {
 	 */
 	private void fetchUserActivity() {
 		
+	}
+	
+	private void initializeWebApp() {
+        this.kanbanActivityDelegate = new KanbanActivityDelegate();
+        this.kanbanWorkflowDelegate = new KanbanWorkflowDelegate();
+        this.userActivityDelegate = new UserActivityDelegate();
+        this.scrumWorksConnection = new ScrumWorksConnection();
 	}
 }

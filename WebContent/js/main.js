@@ -3,6 +3,7 @@
  * via jQuery.
  */
 $(document).ready(function() {
+	initializeBackend(); // Create scrumworks connection.
 	
 	// Fade in the top menu.
 	$("li").each(function(index) {
@@ -68,7 +69,7 @@ function kanbanActivity() {
 	$.ajax({
         type: "POST",
         url: "RequestServlet",
-        data :"kanban_activity"
+        data: "kanban_activity"
 	});
 }
 
@@ -87,6 +88,19 @@ function userActivity() {
 	$.ajax({
         type: "POST",
         url: "RequestServlet",
-        data :"user_activity"
+        data: "user_activity"
+	});
+}
+
+/**
+ * This function will call the backend and
+ * tell it to initialize a connection to
+ * ScrumWorks Pro.
+ */
+function initializeBackend() {
+	$.ajax({
+        type: "POST",
+        url: "RequestServlet",
+        data : "initialize"
 	});
 }
