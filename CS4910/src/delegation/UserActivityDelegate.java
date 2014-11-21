@@ -2,8 +2,6 @@ package delegation;
 
 import com.danube.scrumworks.api2.client.ScrumWorksAPIService;
 
-import connection.ScrumWorksConnection;
-
 /**
  * This class will be responsible for getting
  * and returning all data associated with

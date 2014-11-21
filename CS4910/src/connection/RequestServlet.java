@@ -21,14 +21,15 @@ import delegation.UserActivityDelegate;
  * user requests and delegating the work out to
  * other classes for each specific task.
  * 
- * @author James Manes (JAM38220)
+ * @author James Manes (JAM38220@ucmo.edu)
+ * @author James Sparks (JCS67070@ucmo.edu)
+ * @author Brandt Sanders (BDS01970@ucmo.edu)
  */
 @WebServlet("/RequestServlet")
 public class RequestServlet extends HttpServlet {
 	private KanbanActivityDelegate kanbanActivityDelegate;
 	private KanbanWorkflowDelegate kanbanWorkflowDelegate;
 	private UserActivityDelegate userActivityDelegate;
-	private ScrumWorksConnection scrumWorksConnection;
 	private static final long serialVersionUID = 1L;
 	
 	private static final String scrumWorksURL 
