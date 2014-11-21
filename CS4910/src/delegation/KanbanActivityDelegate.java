@@ -1,6 +1,6 @@
 package delegation;
 
-import connection.ScrumWorksConnection;
+import com.danube.scrumworks.api2.client.ScrumWorksAPIService;
 
 /**
  * This class will be responsible for getting
@@ -10,9 +10,9 @@ import connection.ScrumWorksConnection;
  * @author James Manes (JAM38220)
  */
 public class KanbanActivityDelegate {
-	private ScrumWorksConnection connection;
+	private ScrumWorksAPIService apiService;
 	
-	public KanbanActivityDelegate(ScrumWorksConnection connection) {
-		this.connection = connection;
+	public KanbanActivityDelegate(ScrumWorksAPIService apiService) {
+		this.apiService = apiService;
 	}
 }

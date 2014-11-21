@@ -25,6 +25,7 @@ public class ScrumWorksConnection {
 		try {
 			ScrumWorksAPIService apiService = ScrumWorksService.getConnection(
 					scrumWorksURL, username, password);
+			
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}

@@ -1,5 +1,7 @@
 package delegation;
 
+import com.danube.scrumworks.api2.client.ScrumWorksAPIService;
+
 import connection.ScrumWorksConnection;
 
 /**
@@ -13,9 +15,9 @@ import connection.ScrumWorksConnection;
  * @author James Manes (JAM38220)
  */
 public class KanbanWorkflowDelegate {
-	private ScrumWorksConnection connection;
+	private ScrumWorksAPIService apiService;
 	
-	public KanbanWorkflowDelegate(ScrumWorksConnection connection) {
-		this.connection = connection;
+	public KanbanWorkflowDelegate(ScrumWorksAPIService apiService) {
+		this.apiService = apiService;
 	}
 }

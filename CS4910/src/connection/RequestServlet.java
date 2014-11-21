@@ -1,12 +1,16 @@
 package connection;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.danube.scrumworks.api2.ScrumWorksService;
+import com.danube.scrumworks.api2.client.ScrumWorksAPIService;
 
 import delegation.KanbanActivityDelegate;
 import delegation.KanbanWorkflowDelegate;
@@ -26,6 +30,11 @@ public class RequestServlet extends HttpServlet {
 	private UserActivityDelegate userActivityDelegate;
 	private ScrumWorksConnection scrumWorksConnection;
 	private static final long serialVersionUID = 1L;
+	
+	private static final String scrumWorksURL 
+		= "http://localhost:8080/scrumworks-api/api2/scrumworks?wsdl";
+	private static final String username = "administrator";
+	private static final String password = "password";
        
     /**
      * Call super to set up the HttpServlet class and
@@ -99,9 +108,14 @@ public class RequestServlet extends HttpServlet {
 	 * installation.
 	 */
 	private void initializeWebApp() {
-        this.scrumWorksConnection = new ScrumWorksConnection();
-        this.kanbanActivityDelegate = new KanbanActivityDelegate(scrumWorksConnection);
-        this.kanbanWorkflowDelegate = new KanbanWorkflowDelegate(scrumWorksConnection);
-        this.userActivityDelegate = new UserActivityDelegate(scrumWorksConnection);
+		ScrumWorksAPIService apiService = null;
+        try {
+			apiService = ScrumWorksService.getConnection(scrumWorksURL, username, password);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+        this.kanbanActivityDelegate = new KanbanActivityDelegate(apiService);
+        this.kanbanWorkflowDelegate = new KanbanWorkflowDelegate(apiService);
+        this.userActivityDelegate = new UserActivityDelegate(apiService);
 	}
 }
